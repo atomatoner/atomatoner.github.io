@@ -1,0 +1,249 @@
+@charset 'utf-8';
+
+@import 'settings';
+@import 'foundation';
+@import 'motion-ui';
+
+@include foundation-global-styles;
+@include foundation-grid;
+// @include foundation-flex-grid;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-forms;
+// @include foundation-range-input;
+@include foundation-accordion;
+@include foundation-accordion-menu;
+@include foundation-badge;
+@include foundation-breadcrumbs;
+@include foundation-button-group;
+@include foundation-callout;
+@include foundation-close-button;
+@include foundation-menu;
+@include foundation-menu-icon;
+@include foundation-drilldown-menu;
+@include foundation-dropdown;
+@include foundation-dropdown-menu;
+@include foundation-flex-video;
+@include foundation-label;
+@include foundation-media-object;
+@include foundation-off-canvas;
+@include foundation-orbit;
+@include foundation-pagination;
+@include foundation-progress-bar;
+// @include foundation-progress-element;
+// @include foundation-meter-element;
+@include foundation-slider;
+@include foundation-sticky;
+@include foundation-reveal;
+@include foundation-switch;
+@include foundation-table;
+@include foundation-tabs;
+@include foundation-thumbnail;
+@include foundation-title-bar;
+@include foundation-tooltip;
+@include foundation-top-bar;
+@include foundation-visibility-classes;
+@include foundation-float-classes;
+// @include foundation-flex-classes;
+
+@include motion-ui-transitions;
+@include motion-ui-animations;
+
+/***********************
+		Variables
+***********************/
+$red : #f00;
+$black : #333;
+$white : #fff;
+$font : 'Roboto', Arial, Sans-serif;
+
+body {
+	overflow-x:hidden; 
+	background-color: $black;
+	color:$white;
+}
+
+ @font-face {
+    font-family: 'eightbit';
+    src: url(../css/WONDER.TTF);
+}
+
+@font-face {
+  font-family: 'Press Start 2P';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Press Start 2P'), local('PressStart2P-Regular'), url(https://fonts.gstatic.com/s/pressstart2p/v4/8Lg6LX8-ntOHUQnvQ0E7o08SWvhA5BcWCS8xVZDIH7E.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Cabin';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Cabin Regular'), local('Cabin-Regular'), url(https://fonts.gstatic.com/s/cabin/v8/yQOMOX5hR0-6LTD879t-PQ.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Cabin';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Cabin Bold'), local('Cabin-Bold'), url(https://fonts.gstatic.com/s/cabin/v8/82B-3YlzWJm8zbCrVEmc_vesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Cabin';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Cabin Italic'), local('Cabin-Italic'), url(https://fonts.gstatic.com/s/cabin/v8/00o5zQ7GoPVPMQsCfDCAnw.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Cabin';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Cabin Bold Italic'), local('Cabin-BoldItalic'), url(https://fonts.gstatic.com/s/cabin/v8/Ww23LQNlhn4dAm9uegPaX_k_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+}
+
+#navigation {
+	height:60px;
+	width: 100%;
+	position: fixed;
+	z-index: 999;
+	color:$white;
+	padding:20px 20px; 
+	background-color: transparent;
+	.left {
+		float: left;	
+		text-align: left;
+		h2{
+			font: 30px 'Press Start 2P',Arial,Sans-serif;
+		}
+	}
+
+	.right {
+			margin:0px 35px; 
+
+		float: right;
+		text-align: right;
+		ul {
+			float: right;
+			font: 22px 'Cabin',Arial, Sans-serif;
+			li {
+				float: left;
+				list-style: none;
+				margin-right: 30px;
+				a{
+					color:$white;
+					padding:10px;
+					&:hover {
+						background-color: rgba(255,255,255,0.5);
+						color:$black;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Hero 
+#hero  {
+	margin:0;
+	padding:0;
+
+	.toptriangle {
+		position: absolute;
+		width: 0px;
+		height: 0px;
+		border-style: solid;
+		border-color: $red transparent transparent transparent;
+	}
+	.bottomtriangle {
+		position: absolute;
+		width: 0px;
+		height: 0px;
+		border-style: solid;
+		border-color: transparent transparent $black transparent;
+	}
+
+	h1 {
+		color:$white;
+		font-size: 100px;
+		z-index: 99;
+		position: relative;
+		text-align: center;
+		vertical-align: middle;
+		//width:600px;
+		margin:0 auto;
+		font-family: 'Cabin',Arial, Sans-serif;
+	}
+
+	#glimpse {
+		color:#ddd;
+		font-size: 50px;
+		z-index: 99;
+		position: relative;
+		text-align: center;
+		vertical-align: middle;
+		max-resolution: 20px auto;
+		font-style: italic;
+		font-family: 'Cabin',Arial, Sans-serif;
+		transition: all 1s;
+		transition-timing-function: ease-out;
+	}
+
+}
+
+#feature {
+	padding-top: 20px;
+	
+	color:$white;
+	position: relative; 
+
+	.card {
+		background-color: $white;
+		color:$black;
+		padding: 10px;
+		margin: 10px;
+		min-height: 300px;
+		border-top: 10px solid $red;
+
+		i {
+			width: 100%;
+			font-size:70px;
+			text-align: center;
+			margin-bottom: 50px;
+			margin-top: 10px;
+		}
+
+		h3 {
+			font-family: 'Cabin', Arial, Sans-serif;
+			font-size: 30px;
+			text-align:center;
+		}
+	}
+	.special.card {
+			background-color: $red;
+			padding:0;
+			padding: 10px;
+			margin: 10px;
+			min-height: 300px;
+ 
+	}
+	
+}
+
+#secondfeat {
+	margin-top: 100px;
+	i {
+		font-size: 80px;
+		text-align: center;
+	}
+	.row {
+		margin-top: 40px;
+	}
+}
+
+#midtriangle {
+		width: 0px;
+		height: 0px;
+		border-style: solid;
+		border-color: transparent transparent transparent $red;
+		position: absolute;
+		margin-top: 60px;
+}

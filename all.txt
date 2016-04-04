@@ -1,0 +1,465 @@
+Write a  program to read n words and create a list of only those words where  the first letter occurs in the same word again
+
+ip=""
+lst = list()
+while ip!="exit":
+    print("Input exit to exit the program")
+    ip = input("Enter a string")
+    ip = ip.lower()
+    if ip.count(ip[0])>1:
+        lst.append(ip)
+else:
+    print(lst)
+---------------------------------------------
+
+Write a program to read 100 numbers (data set with duplicates). Create a dictionary from those numbers where the key value pair is number : number of occurrences 
+
+import random
+lst = list()
+#random data set generated
+for i in range(100):
+    lst.append(int(random.uniform(0,10)))
+count = dict()
+for ele in lst:
+    if ele in count:
+        count[ele]+=1
+    else:
+        count[ele]=1
+print(count)
+---------------------------------------------
+
+A string is a Prime String if the number of distinct alphabets used in the string is a
+prime and also the number of occurrences of each alphabet in the string is also a
+prime. Given a String you need to tell if it is a Prime String or not.
+
+
+def is_prime(a):
+    if a<2:
+        return False
+    else:
+        return all(a%i for i in range(2,a))
+    '''all returns True if all the values in the iterable id true.
+       Else it returns false'''
+
+       
+string = str(input("Enter a string: "))
+strset = set(string)
+if is_prime(len(strset)) == False:
+    print("Not a prime string")
+else:
+    for ele in strset:
+        if is_prime(string.count(ele)) == False:
+            print ("Not a prime string")
+            break
+    else:
+        print("Is a prime string")
+    
+---------------------------------------------
+
+Create a class CLOCK. Define a constructor, a SET function and a TICK function. The constructor should initialize the clock. The set function should set the clock to a required value and the tick function should increment the clock by one tick for each call
+
+
+class CLOCK:
+    def __init__(self):
+        self.hour=0
+        self.minu=0
+        self.sec=0
+    def set_clock(self,hour,minu,sec):
+        self.hour=hour
+        self.minu=minu
+        self.sec=sec
+    def tick(self):
+        self.sec+=1
+        if self.sec>60:
+            self.sec = 0
+            self.minu+=1
+        if self.minu >60:
+            self.minu = 0
+            self.hour+=1
+    def display(self):
+        return (self.hour,self.minu,self.sec)
+
+#Main part
+clock = CLOCK()
+a,b,c=map(int,input("Enter the hour, minute, second: ").split())
+print (a,b,c)
+clock.set_clock(a,b,c)
+print("1.To tick\n 2. to stop")
+ip = str(input("Enter the choice: "))
+while ip != "2":
+    clock.tick()
+    h,m,s = clock.display()
+    print("Time on clock: {0}:{1}:{2}".format(h,m,s))
+    ip = str(input("Enter the choice: "))
+else:
+    print("Exit...")
+        
+---------------------------------------------
+
+Write a python program to compute the number of terms in the collatz conjencture
+
+
+n= int(input("Enter the number"))
+end = n
+count =1
+
+while end!=1:
+    if(end%2==0):
+        end/=2
+    else:
+        end = (end*3)+1
+    count+=1
+print ("Number of terms in the conjecture is {}".format(count))
+---------------------------------------------
+
+Create a class called LISTOBJECTS where each object represents a list. Overload appropriate magic  methods to find
+i) sum of two list objects where the resultant should be the sum of corresponding elements of the list
+ii) check if two list objects are equal or not
+
+
+class ListObject:
+    def __init__(self,ip):
+        self.lst = ip
+    def __eq__(self,other):
+        if len(self.lst)!=len(other.lst):
+            print ("The lsits are not equal in length")
+        for a,b in zip(self.lst,other.lst):
+            if a!=b:
+                return False
+        else:
+            return True
+    def __add__(self,other):
+        tmp = list()
+        if len(self.lst)!=len(other.lst):
+            print ("The lsits are not equal in length")
+        for a,b in zip(self.lst,other.lst):
+            tmp.append(a+b)
+        return tmp
+
+
+#Main part
+l1 = ListObject([1,2,3,8])
+l2 = ListObject([4,5,6])
+print(l1==l2)
+print (l1+l2)
+
+---------------------------------------------
+
+Write a python program to find the Pythagorean triplets of a given number
+
+import math
+def istriplet(hypo):
+    if(hypo<4):
+        return  None
+
+    c=hypo**2
+
+    for  a in range(3,hypo):
+        b=math.sqrt(c-(a**2))
+        if(b==int(b)):
+            return a,int(b),hypo
+    return None
+
+hy=int(input("Enter hypotenuse:"))
+res=istriplet(hy)
+if res:
+       print(res)
+else:
+       print("NO")
+
+           
+---------------------------------------------
+
+Write a menu driven program to simulate a queue.
+
+
+q = list()
+def add(a):
+    q.append(a)
+def remove():
+    if len(q)==0:
+        print ("Queue underflow")
+    else:
+        return q.pop(0)
+def display():
+    print (q)
+
+ip = 1
+while ip != 0:
+    print ("1.add()\n2.remove()\n3.display()\n0.Exit")
+    ip = int(input("Enter your choice: "))
+    if ip ==1:
+        a= int(input("Enter the element to be added into the queue: "))
+        add(a)
+    elif ip==2:
+        print("The element removed is: ",remove())
+    elif ip==3:
+        display()
+    else:
+        print("Exit...")
+---------------------------------------------
+
+Write a program to create a text file. Perform the following operations on the file: count the number of words, characters and lines(excluding comment lines). Create a new file and write only the non comment lines into the file
+
+
+add = list()
+with open("test.txt",'w') as foo:
+    ip = str(input("Enter the string to be written: "))
+    foo.write(ip)
+    extra = '''\n This is the additional test being entered\n#this line must not be counted\nThis should be'''
+    foo.write(extra)
+with open("test.txt",'r') as bar:
+    op = bar.read()
+    print("Number of characters in the file is: ",len(op))
+with open("test.txt",'r') as bar:
+    count=0
+    lines = bar.readlines()
+    for line in lines:
+        if line[0]!="#":
+            count+=1
+            add.append(line)
+    print("Number of non comment lines is {}".format(count))
+
+with open("test1.txt",'w') as foo:
+    ip = "\n".join(add)
+    foo.write(ip)
+    
+---------------------------------------------
+
+Create a class called bankaccount to simulate the working of a bank account. Ensure minimum balance is maintainedin the account during withdrawal. Display the number of accounts created.
+
+
+class Account():
+    minu=1000
+    noAcc=0
+
+    def __init__(self,name,acno,bal=1000):
+        Account.noAcc+=1
+        self.name=name
+        self.acno=acno
+        self.bal=bal
+    def deposit(self,amount):
+        self.bal+=amount
+    def withdraw(self,amt):
+        if amt>self.bal or (self.bal-amt)<Account.minu:
+            print("Withdrawal failed. Low balance")
+        else:
+            self.bal-=amt
+    def getBal(self):
+        return self.bal
+    def getnoAcc(cls):
+        return Account.noAcc
+#main part
+
+acc = Account("Test",102,15000)
+acc1 = Account("Test",102,15000)
+acc.deposit(500)
+print(acc.getBal())
+acc.withdraw(250)
+print(acc.getBal())
+print(acc.getnoAcc())
+---------------------------------------------
+
+Create a  GUI with a label and a stop button. The label must display an up counter until the stop button is pressed
+
+
+from tkinter import *
+counts=0
+def quit():
+    global root
+    root.destroy()
+root = Tk()
+root.geometry("200x200")
+root.title("Upcounter")
+x = Label(root,text="Click on the button to stop")
+x.pack()
+Button(root,text="Press to stop",command=quit).pack()
+def count():
+    global counts
+    global x
+    counts+=1
+    x.config(text=counts)
+    x.after(1000,count)
+count()
+root.mainloop()
+---------------------------------------------
+
+write a program to create an English hindi dictionary for 5 numerals. convert it to a hindi-english dictionary
+
+
+etoh={"one":"एक","two":"दो","three":"तीन","four":"चार","five":"पांच"}
+htoe=dict()
+for ele in etoh:
+    key = ele
+    value = etoh[ele]
+    htoe[value]=key
+print(htoe)
+---------------------------------------------
+
+Given a list of n elements, check if it is possible to obtain a sum of S, by choosing
+some (or none) elements of the list and adding them.
+
+import itertools
+
+# The list
+weight = [2,3,6,8,9]
+
+cmb = []
+for x in range(1, len(weight) + 1):
+    cmb += itertools.combinations(weight, x)
+
+#cmb now contains all combos, filter out ones over the limit
+
+# the sum
+limit = 20
+
+valid_combos = [i for i in cmb if sum(i) == limit]
+
+#All possible combinations
+print(valid_combos)
+
+
+ ==> OR <==
+
+
+a = [ 2,6, 5 ,7,12, 13,25,30,34]
+s= 2
+a.sort(reverse =True)
+ 
+temp=s
+flag=0
+pos=0
+if s in a:
+     print s
+elif s == 0:
+     print "no elements required"
+else:    
+     for i,val in enumerate(a):
+         if val  > s:
+              pos = i
+         else:
+              break
+     b= a[i : ]
+      
+  # Controls the number of passes
+     for j in range(len(b)):
+          c=list()
+          s=temp
+          k=0
+          # Loop to backtrack within a single pass
+          while k <= len(b):
+              c=list()
+              s=temp
+              # Loop which traverse through the list in each pass 
+              for i, val in enumerate(b):
+                  if i!=j and i== k:
+                      continue
+                  if val <= s :
+                      c.append(val)
+                      s = s-val
+                  elif s==0:
+                      break
+              sval=0
+              for i,val in enumerate(c):
+                  sval+=val 
+              if sval == temp:
+                  print "C =",c, "The sum is ",sval
+                  flag=1
+                  break
+              k+=1
+          b.pop(0)
+     if flag==0:
+          print "sum not possible"
+
+
+---------------------------------------------
+
+You are given 2 numbers X and Y and asked to find out the Nth number of the
+series   which began with X number of Y’s and the following elements are equal to  the sum of the last X numbers in the series.
+
+x = int(input("Enter the value of X: "))
+y = int(input("Enter the value of Y: "))
+n = int(input("Enter the value of N: "))
+a=list()
+for i in range(x):
+    a.append(y)
+for i in range(n-x):
+    sums =0
+    for j in range (i,i+x):
+        sums+=a[j]
+    a.append(sums)
+print(a)
+---------------------------------------------
+
+Write a program to perform division of two values a and b, prompt for proper input until no exception is generated
+
+
+def ask():
+    a= int(input("Enter an integer"))
+    b= int(input("Enter an integer"))
+    try:
+        c = a/b
+        print ("{0}/{1}={2}".format(a,b,c))
+    except:
+        print("Divide by zero error")
+        ask()
+ask()
+
+
+---------------------------------------------
+
+Write a program to check if the input string contains all letters of the English alphabet. Output YES if all letters are present, otherwise list the alphabets which are not present.
+
+
+import string
+import re
+alpha = set(string.ascii_uppercase)
+ip = (input("Enter a string: "))
+ip = ip.upper()
+ip = re.sub("\W","",ip)
+ip = set(ip)
+diff = alpha-ip
+if len(diff) == 0:
+    print("YES")
+else:
+    print(diff)
+---------------------------------------------
+
+Write a program to find the fifth power of values from 2 to 8 using closure
+
+
+def opower(p):
+    def ipower(x):
+        return x**p
+    return ipower
+
+power = opower(5)
+for i in range(2,9):
+    print(power(i))
+
+
+---------------------------------------------
+Panda  is  fond  of  numbers.  Given  a number, he subtracts it with squares of
+any one particular digit of that number to get new numbers. This operation can be
+applied any number of times (possibly zero) till he obtains a pandatic number. If
+he is able to reach to a pandatic number then he wins. A pandatic number is a
+number which can be expressed in the form AA  , where A is a positive integer. 
+
+import math
+num=str(input("Enter any number"))
+n=int(num)
+print(n)
+b=list(num)
+print(b)
+for i in range(0,len(b)):
+    x=n-(int(b[i]))**2
+    print(x)
+    if x>0:
+        A=int(math.sqrt(x))
+        if x==A**A:
+            print(A)
+            print("YES")
+            break
+        else:
+            print(A)
+            print("NO")
