@@ -39,4 +39,8 @@ $(window).scroll(function navbar(){
 		$("#navigation").css("background-color","transparent");
 	}
 
+	var midh = $("#midtriangle").outerHeight()+55;
+	console.log(midh);
+	$("#midfollowup").css("margin-top",midh+"px"); 
+
 });
