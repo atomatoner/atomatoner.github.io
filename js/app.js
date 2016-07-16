@@ -44,3 +44,12 @@ $(window).scroll(function navbar(){
 	$("#midfollowup").css("margin-top",midh+"px"); 
 
 });
+
+
+function showmobnav(a) {
+    if(a==1)
+    $("#mobnav").css("display","flex");
+	else 
+		    $("#mobnav").css("display","none");
+
+}
