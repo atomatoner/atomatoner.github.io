@@ -4319,6 +4319,8 @@ body {
     text-align: left; }
     #navigation .left h2 {
       font: 30px 'Press Start 2P',Arial,Sans-serif; }
+      #navigation .left h2 a {
+        color: #fff; }
   #navigation .right {
     margin: 0px 35px;
     float: right;
@@ -4511,11 +4513,9 @@ body {
   height: 100%;
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: center;
       -ms-flex-align: center;
+              -ms-grid-row-align: center;
           align-items: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;

@@ -40,16 +40,16 @@ $(window).scroll(function navbar(){
 	}
 
 	var midh = $("#midtriangle").outerHeight()+55;
-	console.log(midh);
 	$("#midfollowup").css("margin-top",midh+"px"); 
 
 });
 
 
 function showmobnav(a) {
+	console.log(a);
     if(a==1)
-    $("#mobnav").css("display","flex");
-	else 
-		    $("#mobnav").css("display","none");
+    	$("#mobnav").css("display","flex");
+	else if(a==0)
+		$("#mobnav").css("display","none");
 
 }

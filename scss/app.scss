@@ -136,6 +136,9 @@ body {
 		text-align: left;
 		h2{
 			font: 30px 'Press Start 2P',Arial,Sans-serif;
+			a {
+				color:#fff;
+			}
 		}
 	}
 
@@ -399,11 +402,9 @@ body {
 	height:100%;
 	background:rgba(0,0,0,0.8);
 	color:#fff;
-	  display: flex;
-	  align-items: center;
-	  justify-content: center;
-	ul {
-	}
+	align-items: center;
+	justify-content: center;
+	
 	li {
 		list-style:none;
 		text-align:center;
