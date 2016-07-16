@@ -17,7 +17,7 @@ $(window).resize(adjust);
 adjust();
 
 (function glimpser(){
-	var text = ["Web Development", "SEO Optimization", "Software Solutions", "Builder of Awesome Websites", "Follower of Code Quality", "has happy and satisfied clients", "is, like, really cool" ,"..."];
+	var text = ["Web Development", "SEO Optimization", "Software Solutions", "Builder of Awesome Websites", "Follower of Code Quality", "has happy and satisfied clients", "is hip" , "the first of its name" ,"..."];
 	var i=0;
 	setInterval(function(){
 		$("#hero #glimpse").text(text[i]).fadeOut().fadeIn();
