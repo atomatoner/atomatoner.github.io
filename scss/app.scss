@@ -61,11 +61,12 @@ body {
 	overflow-x:hidden; 
 	background-color: $black;
 	color:$white;
+	font-family: 'Cabin';
 }
 
- @font-face {
-    font-family: 'eightbit';
-    src: url(../css/WONDER.TTF);
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'Cabin';
+
 }
 
 @font-face {
@@ -405,22 +406,40 @@ body {
 	align-items: center;
 	justify-content: center;
 	
+	.close {
+		display:block;
+		text-align:right;
+		width:100%;
+		top:0;
+		right:28px;
+		position:fixed;
+		a {
+			position:fixed;
+			margin-top:21px;
+			padding:0;
+			color:#fff;
+			font-size:30px;
+			background:transparent;
+			right:27px;
+		}
+	}
+
 	li {
 		list-style:none;
 		text-align:center;
-		padding:1em;
-
+		padding:2em;
 		a {
+			padding:1em;
+			width:100%;
 			text-transform:uppercase;
-			color:#fff;
+			color:#fff;		
+			&:hover {
+				background:(255,255,255,0.8);
+			}
 		}
+		
 	}
-	div>a {
-		margin-top:10px;
-		color:#333;
-		background:#fff;
-
-	}
+	
 }
 
  #navigation span ul  li.icon {display: none;}

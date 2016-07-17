@@ -4244,11 +4244,11 @@ table.hover tr:nth-of-type(even):hover {
 body {
   overflow-x: hidden;
   background-color: #333;
-  color: #fff; }
+  color: #fff;
+  font-family: 'Cabin'; }
 
-@font-face {
-  font-family: 'eightbit';
-  src: url(../css/WONDER.TTF); }
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cabin'; }
 
 @font-face {
   font-family: 'Press Start 2P';
@@ -4520,17 +4520,32 @@ body {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center; }
+  #mobnav .close {
+    display: block;
+    text-align: right;
+    width: 100%;
+    top: 0;
+    right: 28px;
+    position: fixed; }
+    #mobnav .close a {
+      position: fixed;
+      margin-top: 21px;
+      padding: 0;
+      color: #fff;
+      font-size: 30px;
+      background: transparent;
+      right: 27px; }
   #mobnav li {
     list-style: none;
     text-align: center;
-    padding: 1em; }
+    padding: 2em; }
     #mobnav li a {
+      padding: 1em;
+      width: 100%;
       text-transform: uppercase;
       color: #fff; }
-  #mobnav div > a {
-    margin-top: 10px;
-    color: #333;
-    background: #fff; }
+      #mobnav li a:hover {
+        background: 255, 255, 255, 0.8; }
 
 #navigation span ul li.icon {
   display: none; }
