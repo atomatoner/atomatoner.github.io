@@ -619,3 +619,20 @@ h1,h2,h3,h4,h5,h6 {
 		}
 	}
 }
+
+@media screen and (max-width:500px) {
+	.vcontainer {
+		.text {
+			top:2em;
+			h2 {font-size:1.5em;}
+		}
+	}
+
+	.container {
+		.page {
+			.line {
+				padding: 0.1em 7em;
+			}
+		}
+	}
+}

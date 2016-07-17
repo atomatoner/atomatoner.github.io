@@ -4658,7 +4658,7 @@ h1, h2, h3, h4, h5, h6 {
           color: #D50000; }
         .container .page .people .card:hover {
           opacity: 0.7;
-          cursor: crosshair; }
+          cursor: pointer; }
       .container .page .people .img {
         text-align: text-center; }
         .container .page .people .img img {
@@ -4675,3 +4675,11 @@ h1, h2, h3, h4, h5, h6 {
     top: 4em; }
     .vcontainer .text h2 {
       font-size: 3em; } }
+
+@media screen and (max-width: 500px) {
+  .vcontainer .text {
+    top: 2em; }
+    .vcontainer .text h2 {
+      font-size: 1.5em; }
+  .container .page .line {
+    padding: 0.1em 7em; } }
