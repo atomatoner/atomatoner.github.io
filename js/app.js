@@ -53,3 +53,12 @@ function showmobnav(a) {
 		$("#mobnav").css("display","none");
 
 }
+
+$(document).ready(function() {
+	// detect url and add background for nav on non-homepages
+	var allurl = (window.location.pathname).split("/");
+	var last=allurl[allurl.length-1];
+	if(!(last==""||last=="index.html"||last=="#")) {
+		$("#navigation").css("background-color","#333");
+	}
+});

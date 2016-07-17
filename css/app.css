@@ -4247,6 +4247,22 @@ body {
   color: #fff;
   font-family: 'Cabin'; }
 
+.button {
+  background-color: #D50000;
+  border-radius: 5px; }
+  .button:hover {
+    background-color: #D50000;
+    opacity: 0.8; }
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: #fff;
+  background: #D50000; }
+
+::selection {
+  color: #fff;
+  background: #D50000; }
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Cabin'; }
 
@@ -4347,7 +4363,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 0px;
     height: 0px;
     border-style: solid;
-    border-color: #f00 transparent transparent transparent; }
+    border-color: #D50000 transparent transparent transparent; }
   #hero .bottomtriangle {
     position: absolute;
     width: 0px;
@@ -4386,7 +4402,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 10px;
     margin: 10px;
     min-height: 300px;
-    border-top: 10px solid #f00; }
+    border-top: 10px solid #D50000; }
     #feature .card i {
       width: 100%;
       font-size: 70px;
@@ -4398,11 +4414,12 @@ h1, h2, h3, h4, h5, h6 {
       font-size: 30px;
       text-align: center; }
   #feature .special.card {
-    background-color: #f00;
+    background-color: #D50000;
     padding: 0;
     padding: 10px;
     margin: 10px;
-    min-height: 300px; }
+    min-height: 300px;
+    color: #fff; }
 
 #secondfeat {
   margin-top: 100px; }
@@ -4416,7 +4433,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 0px;
   height: 0px;
   border-style: solid;
-  border-color: transparent transparent transparent #f00;
+  border-color: transparent transparent transparent #D50000;
   position: absolute;
   margin-top: 60px; }
 
@@ -4426,13 +4443,13 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 0;
   position: absolute;
   margin-top: 218px;
-  background-color: #f00; }
+  background-color: #D50000; }
 
 #clientfront {
   position: relative;
   z-index: 1;
   margin-top: 13.5em;
-  background-color: #f00;
+  background-color: #D50000;
   padding-bottom: 5em; }
   #clientfront .head {
     text-align: center; }
@@ -4474,13 +4491,13 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #333;
     height: 10px; }
   #batteredlines .bat2 {
-    background-color: #f00;
+    background-color: #D50000;
     height: 10px; }
   #batteredlines .bat3 {
     background-color: #333;
     height: 10px; }
   #batteredlines .bat4 {
-    background-color: #f00;
+    background-color: #D50000;
     height: 10px; }
 
 #footer {
@@ -4585,3 +4602,76 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 50px; }
   #hero #glimpse {
     font-size: 20px; } }
+
+/***********************
+		Single page
+***********************/
+.vcontainer {
+  width: 100%;
+  max-height: 650px;
+  overflow: hidden;
+  /*.overlay {
+		opacity:0.1;
+		width:100%;
+		height:650px;
+		background:url("file:///home/backlash/workspace/atomatoner.github.io/img/pattern.png");
+		z-index:99;
+	}*/ }
+  .vcontainer video {
+    width: 100%;
+    background-size: cover;
+    height: 100%; }
+  .vcontainer .text {
+    z-index: 9;
+    position: absolute;
+    top: 8em;
+    padding: 2em; }
+    .vcontainer .text h2 {
+      font-size: 5em; }
+
+.container {
+  background: #333; }
+  .container .page {
+    min-height: 300px;
+    border-top: 10px solid #D50000;
+    padding: 2em; }
+    .container .page .row {
+      background: #fff;
+      color: #333;
+      margin-top: -2em;
+      padding: 1em; }
+    .container .page .sub {
+      color: #666; }
+    .container .page .line {
+      height: 5px;
+      width: auto;
+      background-color: #D50000;
+      display: inline-block;
+      padding: 0.1em 10em;
+      margin: 2em 0; }
+    .container .page .people {
+      padding-top: 5em; }
+      .container .page .people .card {
+        text-align: center;
+        margin: 0 auto; }
+        .container .page .people .card h5 {
+          color: #D50000; }
+        .container .page .people .card:hover {
+          opacity: 0.7;
+          cursor: crosshair; }
+      .container .page .people .img {
+        text-align: text-center; }
+        .container .page .people .img img {
+          width: 150px;
+          height: 150px;
+          display: block;
+          border-radius: 50%;
+          margin: 0 auto; }
+    .container .page .end {
+      padding-top: 3em; }
+
+@media screen and (max-width: 870px) {
+  .vcontainer .text {
+    top: 4em; }
+    .vcontainer .text h2 {
+      font-size: 3em; } }
